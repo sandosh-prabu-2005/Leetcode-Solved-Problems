@@ -6,7 +6,6 @@ void decimalToBinaryString(unsigned int n, char *binaryStr) {
     binaryStr[32] = '\0';
 }
 
-// 2. Reverse the String (Equivalent to your reverseNumber)
 void reverseString(char *str) {
     int i = 0, j = strlen(str) - 1;
     while (i < j) {
@@ -18,12 +17,10 @@ void reverseString(char *str) {
     }
 }
 
-// 3. Convert Binary String back to Decimal
 unsigned int binaryStringToDecimal(char *binaryStr) {
     unsigned int decimal = 0;
     for (int i = 0; i < 32; i++) {
         if (binaryStr[i] == '1') {
-            // Using bitwise shift for power of 2: (1 << (31 - i))
             decimal += (unsigned int)pow(2, 31 - i);
         }
     }
